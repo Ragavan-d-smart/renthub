@@ -1,0 +1,45 @@
+<h1 class="page-title">
+    My Inquiries
+</h1>
+
+@if (inquiries.length > 0) {
+
+@for (
+inquiry of inquiries;
+track inquiry.id
+) {
+
+<div class="inquiry-card">
+
+    <p>
+        <strong>Property ID:</strong>
+        {{ inquiry.propertyId }}
+    </p>
+
+    <p>
+        {{ inquiry.message }}
+    </p>
+
+    <small>
+        {{ inquiry.createdAt }}
+    </small>
+
+</div>
+
+}
+
+} @else {
+
+<div class="empty-state">
+
+    <h2>
+        No Inquiries Yet
+    </h2>
+
+    <p>
+        Your submitted inquiries will appear here.
+    </p>
+
+</div>
+
+}

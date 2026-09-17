@@ -1,0 +1,102 @@
+<div class="auth-container">
+  <h2>Create Account</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+
+      <input
+        matInput
+        formControlName="name">
+
+      @if (
+        registerForm.get('name')?.touched &&
+        registerForm.get('name')?.hasError('required')
+      ) {
+        <mat-error>
+          Name is required
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+
+      <input
+        matInput
+        type="email"
+        formControlName="email">
+
+      @if (
+        registerForm.get('email')?.touched &&
+        registerForm.get('email')?.hasError('required')
+      ) {
+        <mat-error>
+          Email is required
+        </mat-error>
+      }
+
+      @if (
+        registerForm.get('email')?.touched &&
+        registerForm.get('email')?.hasError('email')
+      ) {
+        <mat-error>
+          Please enter a valid email address
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+
+      <input
+        matInput
+        type="password"
+        formControlName="password">
+
+      @if (
+        registerForm.get('password')?.touched &&
+        registerForm.get('password')?.hasError('required')
+      ) {
+        <mat-error>
+          Password is required
+        </mat-error>
+      }
+
+      @if (
+        registerForm.get('password')?.touched &&
+        registerForm.get('password')?.hasError('minlength')
+      ) {
+        <mat-error>
+          Password must be at least 6 characters
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Role</mat-label>
+
+      <mat-select formControlName="role">
+        <mat-option value="RENTER">
+          Renter
+        </mat-option>
+
+        <mat-option value="LANDLORD">
+          Landlord
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      type="submit"
+      [class.primary-button]="registerForm.valid"
+      [disabled]="registerForm.invalid">
+
+      Register
+
+    </button>
+
+  </form>
+</div>

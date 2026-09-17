@@ -1,0 +1,509 @@
+{
+  "users": [
+    {
+      "id": "NUCIdV4_jbE",
+      "name": "Ramu bhat",
+      "email": "r.bhat@gmail.com",
+      "password": "Letmein",
+      "role": "RENTER",
+      "createdAt": "2026-09-15T11:38:53.354Z"
+    },
+    {
+      "id": "c4oOi7reCPM",
+      "name": "Raj bhat",
+      "email": "rbhat@gmail.com",
+      "password": "letmein",
+      "role": "RENTER",
+      "createdAt": "2026-09-15T11:50:33.064Z"
+    }
+  ],
+  "properties": [
+    {
+      "id": "1",
+      "title": "Luxury 2 BHK Apartment",
+      "description": "Spacious apartment with modern amenities",
+      "address": "Race Course Road",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 25000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFeet": 1200,
+      "furnished": true,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Gym"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner1",
+      "featured": true,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "2",
+      "title": "Charming 1 BHK Studio",
+      "description": "Cozy studio apartment perfect for students or working professionals",
+      "address": "Gandhipuram",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 12000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "squareFeet": 550,
+      "furnished": false,
+      "leaseType": "SHORT_TERM",
+      "amenities": [
+        "Parking",
+        "Power Backup"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner2",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "3",
+      "title": "Premium 3 BHK Villa",
+      "description": "Luxury villa with a private garden and high-end finishes",
+      "address": "Saravanampatti",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 45000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "squareFeet": 2400,
+      "furnished": true,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Gym",
+        "Garden",
+        "Swimming Pool"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner3",
+      "featured": true,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "4",
+      "title": "Modern 2 BHK Gated Community House",
+      "description": "Beautiful independent house inside a secure gated community",
+      "address": "Peelamedu",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 22000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFeet": 1400,
+      "furnished": false,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "24/7 Security",
+        "Playground"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner4",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "5",
+      "title": "Elegant 3 BHK Penthouse",
+      "description": "Stunning penthouse offering panoramic city views and a massive terrace",
+      "address": "RS Puram",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 60000,
+      "bedrooms": 3,
+      "bathrooms": 4,
+      "squareFeet": 3000,
+      "furnished": true,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Gym",
+        "Terrace Garden",
+        "Elevator"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner5",
+      "featured": true,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "6",
+      "title": "Affordable 2 BHK Flat",
+      "description": "Well-maintained budget apartment close to public transport",
+      "address": "Singanallur",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 16000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFeet": 1050,
+      "furnished": false,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "Lift",
+        "Water Plant"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner6",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "7",
+      "title": "Fully Furnished 1 BHK Flat",
+      "description": "Move-in ready apartment with complete interior setup",
+      "address": "Vadavalli",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 15000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "squareFeet": 650,
+      "furnished": true,
+      "leaseType": "SHORT_TERM",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "AC",
+        "TV"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner7",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "8",
+      "title": "Spacious 4 BHK Independent Villa",
+      "description": "Grand villa located in a peaceful residential neighborhood",
+      "address": "Kovaipudur",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 55000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "squareFeet": 3500,
+      "furnished": false,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "CCTV",
+        "Private Yard",
+        "Pet Friendly"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner8",
+      "featured": true,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "9",
+      "title": "Compact 2 BHK Apartment",
+      "description": "Smartly designed compact home maximizing usable space",
+      "address": "Thudiyalur",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 14000,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "squareFeet": 850,
+      "furnished": false,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "Security"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner9",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "10",
+      "title": "Luxury 3 BHK Executive Suite",
+      "description": "High-end apartment catering to corporate professionals",
+      "address": "Avinashi Road",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 40000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "squareFeet": 1800,
+      "furnished": true,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Gym",
+        "Clubhouse",
+        "Power Backup"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner10",
+      "featured": true,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "11",
+      "title": "Semi-Furnished 2 BHK House",
+      "description": "First-floor independent unit with modular kitchen installed",
+      "address": "Ramanathapuram",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 18000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFeet": 1100,
+      "furnished": true,
+      "leaseType": "LONG_TERM",
+      "amenities": [
+        "Parking",
+        "Wardrobes",
+        "Modular Kitchen"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner11",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "12",
+      "title": "Cozy 1 BHK Penthouse for Bachelors",
+      "description": "Top-floor single bedroom pad with open terrace access",
+      "address": "Saibaba Colony",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "rent": 13000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "squareFeet": 600,
+      "furnished": true,
+      "leaseType": "SHORT_TERM",
+      "amenities": [
+        "Parking",
+        "Terrace Access",
+        "WiFi"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "owner12",
+      "featured": false,
+      "createdAt": "2026-09-16"
+    },
+    {
+      "id": "wqOHEBISgmk",
+      "title": "5BHK Mansion",
+      "description": "This is an awsome property worthy of your every penny you spend on it.,",
+      "address": "Inia",
+      "city": "Chennai",
+      "state": "Tamilnadu",
+      "rent": 50000,
+      "bedrooms": 5,
+      "bathrooms": 6,
+      "squareFeet": 8000,
+      "furnished": true,
+      "leaseType": "BOTH",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Swimming Pool",
+        "Security"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "c4oOi7reCPM",
+      "featured": false,
+      "createdAt": "2026-09-17T02:56:55.598Z"
+    },
+    {
+      "id": "8tranj9LmxQ",
+      "title": "5BHK Mansion",
+      "description": "This is an awsome property worthy of your every penny you spend on it.,",
+      "address": "Inia",
+      "city": "Chennai",
+      "state": "Tamilnadu",
+      "rent": 50000,
+      "bedrooms": 5,
+      "bathrooms": 6,
+      "squareFeet": 8000,
+      "furnished": true,
+      "leaseType": "BOTH",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Swimming Pool",
+        "Security",
+        "Lift"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "c4oOi7reCPM",
+      "featured": false,
+      "createdAt": "2026-09-17T05:12:25.467Z"
+    },
+    {
+      "id": "zyG8hxMGQA0",
+      "title": "Maddison Mansion",
+      "description": "This property is worthy of every penny you spend on it.,",
+      "address": "Maddission",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "rent": 40000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "squareFeet": 2100,
+      "furnished": true,
+      "leaseType": "BOTH",
+      "amenities": [
+        "Parking",
+        "WiFi",
+        "Security"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "c4oOi7reCPM",
+      "featured": false,
+      "createdAt": "2026-09-17T05:50:58.492Z"
+    },
+    {
+      "id": "1cIlyoAe4n4",
+      "title": "Maddission Longue",
+      "description": "Property is worth of every penny you spend on it.,",
+      "address": "White field",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "rent": 70000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "squareFeet": 8000,
+      "furnished": true,
+      "leaseType": "BOTH",
+      "amenities": [
+        "Parking",
+        "Security",
+        "WiFi"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "ownerId": "c4oOi7reCPM",
+      "featured": false,
+      "createdAt": "2026-09-17T05:53:45.719Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "propertyId": 2,
+      "userId": "c4oOi7reCPM",
+      "content": "Is parking available?",
+      "createdAt": "2026-09-16T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "propertyId": 2,
+      "userId": "NUCIdV4_jbE",
+      "content": "Can I schedule a visit this weekend?",
+      "createdAt": "2026-09-16T13:00:00Z"
+    },
+    {
+      "id": "9pTFXg7c6_U",
+      "propertyId": "2",
+      "userId": "c4oOi7reCPM",
+      "content": "Is this okay?",
+      "createdAt": "2026-09-16T16:30:57.331Z"
+    },
+    {
+      "id": "3Wi7sl3YQlE",
+      "propertyId": 2,
+      "userId": "c4oOi7reCPM",
+      "content": "Yes, Available",
+      "parentCommentId": "1",
+      "createdAt": "2026-09-16T17:08:56.101Z"
+    },
+    {
+      "id": "2Sl1cwTCl3A",
+      "propertyId": 2,
+      "userId": "c4oOi7reCPM",
+      "content": "Nope,",
+      "parentCommentId": "1",
+      "createdAt": "2026-09-16T17:11:48.343Z"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "wIug22vVSw4",
+      "userId": "c4oOi7reCPM",
+      "propertyId": "2"
+    },
+    {
+      "id": "399jnsAmdi8",
+      "userId": "c4oOi7reCPM",
+      "propertyId": "6"
+    },
+    {
+      "id": "AyAHdfMcKts",
+      "userId": "c4oOi7reCPM",
+      "propertyId": "6"
+    },
+    {
+      "id": "yqBR8zljFSo",
+      "userId": "c4oOi7reCPM",
+      "propertyId": "2"
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "t7cxiFYZbyk",
+      "propertyId": "wqOHEBISgmk",
+      "userId": "c4oOi7reCPM",
+      "message": "Is this property still available?",
+      "createdAt": "2026-09-17T05:21:09.759Z"
+    },
+    {
+      "id": "H8Grm4nlBwo",
+      "propertyId": "wqOHEBISgmk",
+      "userId": "c4oOi7reCPM",
+      "message": "Is this property still available?",
+      "createdAt": "2026-09-17T05:21:41.230Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

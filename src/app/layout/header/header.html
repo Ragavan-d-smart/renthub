@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+  <span class="logo" routerLink="/">
+    RentHub
+  </span>
+
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/">
+    Home
+  </button>
+
+  @if (authService.isLoggedIn()) {
+
+  <button mat-button routerLink="/favorites">
+    Favorites
+  </button>
+
+  <button mat-button routerLink="/my-properties">
+    My Properties
+  </button>
+
+  <button mat-button routerLink="/properties/create">
+    Create Property
+  </button>
+
+  <span class="user-name">
+    Welcome, {{ authService.getUserName() }}
+  </span>
+
+  <button mat-button routerLink="/my-inquiries">
+    My Inquiries
+  </button>
+
+  <button mat-button (click)="logout()">
+    Logout
+  </button>
+
+  } @else {
+
+  <button mat-button routerLink="/login">
+    Login
+  </button>
+
+  <button mat-button routerLink="/register">
+    Register
+  </button>
+
+  }
+</mat-toolbar>

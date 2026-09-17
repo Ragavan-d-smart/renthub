@@ -1,1 +1,106 @@
-/* You can add global styles to this file, and also import other style files */
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://angular.dev
+@use '@angular/material' as mat;
+
+// 1. Define your Material 3 theme object as a reusable Sass variable
+$my-theme: mat.define-theme(
+  (
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Roboto,
+    ),
+    // FIXED: Changed from 'density: 0' to a proper M3 density map
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+html {
+  height: 100%;
+  
+  // 2. Inject your main theme variables
+  @include mat.theme($my-theme);
+
+  // 3. Inject the explicit toolbar component override
+  @include mat.toolbar-overrides((
+    container-background-color: mat.get-theme-color($my-theme, primary),
+    container-text-color: mat.get-theme-color($my-theme, on-primary)
+  ));
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+  height: 100%;
+}
+
+/* -------------------------------------------------- */
+/* Global Styles */
+/* -------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: min(1200px, 95%);
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+
+.cdk-overlay-pane {
+  z-index: 2000;
+}
+
+.mat-mdc-select-panel {
+  background: white !important;
+}
+
+.success-snackbar {
+  --mdc-snackbar-container-color: #2e7d32;
+  --mat-snack-bar-button-color: white;
+}
+
+.error-snackbar {
+  --mdc-snackbar-container-color: #d32f2f;
+  --mat-snack-bar-button-color: white;
+}
+
+.warning-snackbar {
+  --mdc-snackbar-container-color: #ed6c02;
+  --mat-snack-bar-button-color: white;
+}
+
+.info-snackbar {
+  --mdc-snackbar-container-color: #1976d2;
+  --mat-snack-bar-button-color: white;
+}

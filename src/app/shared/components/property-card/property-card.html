@@ -1,0 +1,45 @@
+<mat-card class="property-card">
+
+    <img mat-card-image [src]="property.images[0]" [alt]="property.title">
+
+    <mat-card-content>
+        <h3 class="property-title">
+            {{ property.title }}
+        </h3>
+        <p>
+            {{ property.city }},
+            {{ property.state }}
+        </p>
+        <p class="rent">
+            ₹ {{ property.rent }}
+        </p>
+        <p>
+            {{ property.bedrooms }} BHK •
+            {{ property.squareFeet }} sq.ft
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions class="card-actions">
+        <button class="details-btn" [routerLink]="['/properties', property.id]">
+
+            View Details
+
+        </button>
+        @if (showRemoveFavorite) {
+        <button class="remove-btn" (click)="removeFavorite.emit(property.id)">
+            Remove Favorite
+        </button>
+        }
+        @if (showEditButton) {
+        <button class="edit-btn" [routerLink]="['/properties/edit', property.id]">
+            Edit Property
+        </button>
+        }
+        @if (showDeleteButton) {
+        <button class="delete-btn" (click)="deleteProperty.emit(property.id)">
+            Delete Property
+        </button>
+        }
+    </mat-card-actions>
+
+</mat-card>

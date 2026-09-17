@@ -1,0 +1,168 @@
+@if (currentFeaturedProperty) {
+<section class="featured-section">
+  <h1 class="page-title">
+    Featured Properties
+  </h1>
+  <div class="featured-card">
+    <img [src]="currentFeaturedProperty.images[0]" [alt]="currentFeaturedProperty.title">
+    <div class="featured-content">
+      <h2>
+        {{ currentFeaturedProperty.title }}
+      </h2>
+      <p>
+        {{ currentFeaturedProperty.city }},
+        {{ currentFeaturedProperty.state }}
+      </p>
+      <p class="featured-rent">
+        ₹ {{ currentFeaturedProperty.rent }}
+      </p>
+      <div class="carousel-actions">
+        <button class="carousel-btn" (click)="previousFeatured()">
+          Previous
+        </button>
+        <button class="carousel-btn" (click)="nextFeatured()">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+}
+
+<h1 class="page-title">
+  Available Properties
+</h1>
+
+<div class="search-container">
+  <input type="text" placeholder="Search by property title or city..." [(ngModel)]="searchTerm">
+</div>
+
+<div class="filters-container">
+
+  <div class="filter-group">
+    <label for="bedrooms">
+      Bedrooms
+    </label>
+
+    <select id="bedrooms" [(ngModel)]="selectedBedrooms">
+      <option [value]="0">
+        All Bedrooms
+      </option>
+      <option [value]="1">
+        1 BHK
+      </option>
+      <option [value]="2">
+        2 BHK
+      </option>
+      <option [value]="3">
+        3 BHK
+      </option>
+      <option [value]="4">
+        4 BHK
+      </option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="furnished">
+      Furnished
+    </label>
+
+    <select id="furnished" [(ngModel)]="selectedFurnished">
+      <option value="ALL">
+        All
+      </option>
+      <option value="FURNISHED">
+        Furnished
+      </option>
+      <option value="NON_FURNISHED">
+        Non Furnished
+      </option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+
+    <label for="rentRange">
+      Rent Range
+    </label>
+
+    <select id="rentRange" [(ngModel)]="selectedRentRange">
+      <option value="ALL">
+        All Prices
+      </option>
+      <option value="UNDER_15000">
+        Under ₹15,000
+      </option>
+      <option value="BETWEEN_15000_30000">
+        ₹15,000 - ₹30,000
+      </option>
+      <option value="ABOVE_30000">
+        Above ₹30,000
+      </option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+
+    <label for="sort">
+      Sort By
+    </label>
+
+    <select id="sort" [(ngModel)]="selectedSort">
+      <option value="DEFAULT">
+        Default
+      </option>
+      <option value="PRICE_LOW_TO_HIGH">
+        Price Low → High
+      </option>
+      <option value="PRICE_HIGH_TO_LOW">
+        Price High → Low
+      </option>
+    </select>
+  </div>
+  
+  <div class="filter-group">
+  <label>&nbsp;</label>
+  <button
+    class="reset-btn"
+    (click)="resetFilters()">
+    Reset Filters
+  </button>
+</div>
+</div>
+
+@if (filteredProperties.length > 0) {
+<div class="property-grid">
+  @for (
+  property of paginatedProperties;
+  track property.id
+  ) {
+  <app-property-card [property]="property">
+  </app-property-card>
+  }
+</div>
+<div class="pagination-container">
+  <button class="pagination-btn" (click)="previousPage()" [disabled]="currentPage === 1">
+    Previous
+  </button>
+
+  <span>
+    Page {{ currentPage }}
+    of
+    {{ totalPages }}
+  </span>
+
+  <button class="pagination-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
+    Next
+  </button>
+</div>
+} @else {
+<div class="empty-state">
+  <h2>No Properties Found</h2>
+  <p>
+    Try adjusting your search criteria.
+  </p>
+</div>
+}

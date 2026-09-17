@@ -1,0 +1,123 @@
+.property-card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.property-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    min-height: 3rem;
+}
+
+.rent {
+    color: #1565c0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+mat-card-actions {
+    padding: 1rem;
+}
+
+h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+mat-card-actions button {
+    width: 100%;
+}
+
+.details-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #1976d2;
+  background: white;
+  color: #1976d2;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.details-btn:hover {
+  background: #1976d2;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.remove-btn {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #d32f2f;
+  background: white;
+  color: #d32f2f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #d32f2f;
+  color: white;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.details-btn,
+.remove-btn {
+  width: 100%;
+}
+
+.delete-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d32f2f;
+  background: white;
+  color: #d32f2f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+  color: white;
+}
+
+.edit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #f57c00;
+  background: white;
+  color: #f57c00;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #f57c00;
+  color: white;
+}

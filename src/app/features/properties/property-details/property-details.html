@@ -1,0 +1,167 @@
+@if (property) {
+
+<div class="property-details">
+
+    <img class="hero-image" [src]="property.images[0]" [alt]="property.title">
+
+    <h1>
+        {{ property.title }}
+    </h1>
+
+    <p class="rent">
+        ₹ {{ property.rent }}
+    </p>
+
+    <p class="location">
+        {{ property.city }},
+        {{ property.state }}
+    </p>
+
+    <section class="info-section">
+        <h2>Property Details</h2>
+        <p>
+            Bedrooms:
+            {{ property.bedrooms }}
+        </p>
+        <p>
+            Bathrooms:
+            {{ property.bathrooms }}
+        </p>
+        <p>
+            Area:
+            {{ property.squareFeet }} sq.ft.
+        </p>
+        <p>
+            Furnished:
+            {{ property.furnished ? 'Yes' : 'No' }}
+        </p>
+    </section>
+
+    <section class="info-section">
+        <h2>Description</h2>
+        <p>
+            {{ property.description }}
+        </p>
+    </section>
+
+    <section class="info-section">
+        <h2>Amenities</h2>
+        <ul>
+            @for (
+            amenity of property.amenities;
+            track amenity
+            ) {
+            <li>
+                {{ amenity }}
+            </li>
+            }
+        </ul>
+    </section>
+
+    <section class="info-section">
+        <h2>Comments</h2>
+        @if (comments.length > 0) {
+        @for (
+        comment of getParentComments();
+        track comment.id
+        ) {
+        <div class="comment-card">
+
+            <p>
+                {{ comment.content }}
+            </p>
+
+            <div class="comment-footer">
+                <small>
+                    {{ comment.createdAt }}
+                </small>
+
+                <button class="reply-btn" (click)="startReply(comment.id)">
+                    Reply
+                </button>
+            </div>
+
+            @if (getReplies(comment.id).length > 0) {
+
+            <div class="replies">
+                @for (
+                reply of getReplies(comment.id);
+                track reply.id
+                ) {
+                <div class="reply-card">
+                    <p>
+                        {{ reply.content }}
+                    </p>
+                    <small>
+                        {{ reply.createdAt }}
+                    </small>
+                </div>
+                }
+            </div>
+            }
+
+            @if (replyingToCommentId === comment.id) {
+
+            <div class="reply-section">
+                <textarea [(ngModel)]="replyText" rows="3" placeholder="Write a reply...">
+      </textarea>
+                <div class="reply-actions">
+                    <button class="primary-btn" (click)="postReply(comment.id)">
+                        Post Reply
+                    </button>
+
+                    <button class="outline-btn" (click)="cancelReply()">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+        }
+        } @else {
+        <p>
+            No comments yet.
+        </p>
+        }
+    </section>
+
+    <section class="info-section">
+        <h2>Add Comment</h2>
+        <textarea [(ngModel)]="newComment" placeholder="Write your comment here..." rows="4">
+  </textarea>
+
+        <button class="primary-btn" (click)="postComment()">
+            Post Comment
+        </button>
+    </section>
+
+    <div class="action-buttons">
+        <button class="outline-btn" (click)="toggleFavorite()">
+            {{ isFavorite
+            ? 'Remove From Favorites'
+            : 'Add To Favorites' }}
+        </button>
+
+        <button class="primary-btn" (click)="toggleInquiryForm()">
+            Send Inquiry
+        </button>
+    </div>
+    @if (showInquiryForm) {
+
+    <section class="info-section">
+
+        <h2>
+            Inquiry Message
+        </h2>
+
+        <textarea [(ngModel)]="newInquiry" rows="4" placeholder="Enter your inquiry...">
+    </textarea>
+        <button class="primary-btn" (click)="submitInquiry()">
+            Submit Inquiry
+        </button>
+    </section>
+    }
+
+</div>
+
+}

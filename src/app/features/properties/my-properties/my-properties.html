@@ -1,0 +1,34 @@
+<h1 class="page-title">
+  My Properties
+</h1>
+
+@if (properties.length > 0) {
+
+<div class="property-grid">
+
+  @for (
+  property of properties;
+  track property.id
+  ) {
+
+  <app-property-card
+    [property]="property"
+    [showEditButton]="true"
+    [showDeleteButton]="true"
+    (deleteProperty)="deleteProperty($event)">
+  </app-property-card>
+
+  }
+
+</div>
+
+} @else {
+<div class="empty-state">
+  <h2>
+    No Properties Found
+  </h2>
+  <p>
+    Create your first property listing.
+  </p>
+</div>
+}

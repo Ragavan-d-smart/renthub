@@ -1,0 +1,38 @@
+<h1 class="page-title">
+    My Favorites
+</h1>
+
+@if (favoriteProperties.length > 0) {
+
+<div class="property-grid">
+
+    @for (
+    property of favoriteProperties;
+    track property.id
+    ) {
+
+    <app-property-card 
+        [property]="property" 
+        [showRemoveFavorite]="true" 
+        (removeFavorite)="removeFavorite($event)">
+    </app-property-card>
+
+    }
+
+</div>
+
+} @else {
+
+<div class="empty-state">
+
+    <h2>
+        No Favorites Yet
+    </h2>
+
+    <p>
+        Start adding properties to your favorites list.
+    </p>
+
+</div>
+
+}

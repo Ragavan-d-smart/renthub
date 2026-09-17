@@ -1,0 +1,251 @@
+<h1 class="page-title">
+
+    {{ isEditMode
+    ? 'Edit Property'
+    : 'Create Property' }}
+
+</h1>
+
+<form [formGroup]="createPropertyForm" (ngSubmit)="onSubmit()">
+
+    <!-- Property Title -->
+    <mat-form-field appearance="outline">
+        <mat-label>Property Title</mat-label>
+
+        <input matInput formControlName="title">
+
+        @if (
+        createPropertyForm.get('title')?.touched &&
+        createPropertyForm.get('title')?.hasError('required')
+        ) {
+        <mat-error>
+            Property title is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Address -->
+    <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+
+        <input matInput formControlName="address">
+
+        @if (
+        createPropertyForm.get('address')?.touched &&
+        createPropertyForm.get('address')?.hasError('required')
+        ) {
+        <mat-error>
+            Address is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- City -->
+    <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+
+        <input matInput formControlName="city">
+
+        @if (
+        createPropertyForm.get('city')?.touched &&
+        createPropertyForm.get('city')?.hasError('required')
+        ) {
+        <mat-error>
+            City is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- State -->
+    <mat-form-field appearance="outline">
+        <mat-label>State</mat-label>
+
+        <input matInput formControlName="state">
+
+        @if (
+        createPropertyForm.get('state')?.touched &&
+        createPropertyForm.get('state')?.hasError('required')
+        ) {
+        <mat-error>
+            State is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Rent -->
+    <mat-form-field appearance="outline">
+        <mat-label>Monthly Rent</mat-label>
+
+        <input matInput type="number" formControlName="rent">
+
+        @if (
+        createPropertyForm.get('rent')?.touched &&
+        createPropertyForm.get('rent')?.hasError('required')
+        ) {
+        <mat-error>
+            Rent is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Bedrooms -->
+    <mat-form-field appearance="outline">
+        <mat-label>Bedrooms</mat-label>
+
+        <input matInput type="number" formControlName="bedrooms">
+
+        @if (
+        createPropertyForm.get('bedrooms')?.touched &&
+        createPropertyForm.get('bedrooms')?.hasError('required')
+        ) {
+        <mat-error>
+            Bedrooms are required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Bathrooms -->
+    <mat-form-field appearance="outline">
+        <mat-label>Bathrooms</mat-label>
+
+        <input matInput type="number" formControlName="bathrooms">
+
+        @if (
+        createPropertyForm.get('bathrooms')?.touched &&
+        createPropertyForm.get('bathrooms')?.hasError('required')
+        ) {
+        <mat-error>
+            Bathrooms are required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Square Feet -->
+    <mat-form-field appearance="outline">
+        <mat-label>Square Feet</mat-label>
+
+        <input matInput type="number" formControlName="squareFeet">
+
+        @if (
+        createPropertyForm.get('squareFeet')?.touched &&
+        createPropertyForm.get('squareFeet')?.hasError('required')
+        ) {
+        <mat-error>
+            Square feet is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Property Image URL -->
+    <mat-form-field appearance="outline">
+        <mat-label>Property Image URL</mat-label>
+
+        <input matInput formControlName="imageUrl">
+
+        @if (
+        createPropertyForm.get('imageUrl')?.touched &&
+        createPropertyForm.get('imageUrl')?.hasError('required')
+        ) {
+        <mat-error>
+            Property image URL is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Furnished -->
+    <mat-form-field appearance="outline">
+        <mat-label>Furnished</mat-label>
+
+        <mat-select formControlName="furnished">
+
+            <mat-option value="YES">
+                Yes
+            </mat-option>
+
+            <mat-option value="NO">
+                No
+            </mat-option>
+
+        </mat-select>
+
+        @if (
+        createPropertyForm.get('furnished')?.touched &&
+        createPropertyForm.get('furnished')?.hasError('required')
+        ) {
+        <mat-error>
+            Furnished status is required
+        </mat-error>
+        }
+
+    </mat-form-field>
+
+    <!-- Lease Type -->
+    <mat-form-field appearance="outline">
+        <mat-label>Lease Type</mat-label>
+
+        <mat-select formControlName="leaseType">
+
+            <mat-option value="LONG_TERM">
+                Long Term
+            </mat-option>
+
+            <mat-option value="SHORT_TERM">
+                Short Term
+            </mat-option>
+
+            <mat-option value="BOTH">
+                Both
+            </mat-option>
+
+        </mat-select>
+
+        @if (
+        createPropertyForm.get('leaseType')?.touched &&
+        createPropertyForm.get('leaseType')?.hasError('required')
+        ) {
+        <mat-error>
+            Lease type is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput rows="5" formControlName="description">
+  </textarea>
+
+        @if (
+        createPropertyForm.get('description')?.touched &&
+        createPropertyForm.get('description')?.hasError('required')
+        ) {
+        <mat-error>
+            Description is required
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <section class="amenities-section">
+        <h3>Amenities</h3>
+        @for (
+        amenity of availableAmenities;
+        track amenity
+        ) {
+        <label class="amenity-item">
+        <input type="checkbox" 
+        [checked]="createPropertyForm.get('amenities')?.value?.includes(amenity)"
+        (change)="toggleAmenity(
+        amenity,
+        $any($event.target).checked
+        )">
+            {{ amenity }}
+        </label>
+        }
+    </section>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn" [disabled]="createPropertyForm.invalid">
+        {{isEditMode ? 'Update Property' : 'Create Property'}}
+    </button>
+
+</form>
